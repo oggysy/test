@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="stalker01"></div>
+  <div id="stalker02"></div>
+  <div id="stalker03"></div>
+  <h1>
+    ただマウスカーソルに黒いドットが付いてくるだけのシンプルなマウスストーカー
+  </h1>
+
+  <script>
+    //マウスストーカー用のdivを取得
+    const stalker = document.getElementById('stalker01');
+
+    //上記のdivタグをマウスに追従させる処理
+    document.addEventListener('mousemove', function (e) {
+      stalker.style.transform = 'translate(' + e.clientX + 'px,' + 500 + 'px)';
+    });
+
+    const stalker02 = document.getElementById('stalker02');
+
+    //上記のdivタグをマウスに追従させる処理
+    document.addEventListener('mousemove', function (e) {
+      if (e.clientY >= 450 && e.clientY <= 500) stalker02.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+      else stalker02.style.transform = 'translate(' + e.clientX + 'px,' + 488 + 'px)';
+      console.log(e.clientY);
+    });
+
+    const stalker03 = document.getElementById('stalker03');
+
+    document.addEventListener('mousemove', function (e) {
+      if (e.clientY >= 450 && e.clientY <= 500) stalker03.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+      else stalker03.style.transform = 'translate(' + e.clientX + 'px,' + 488 + 'px)';
+      console.log(e.clientY);
+    });
+
+  </script>
+</body>
+
+</html>
